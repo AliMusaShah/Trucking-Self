@@ -93,7 +93,7 @@ const LoginPage = () => {
 
                                     <div className="flex justify-end">
 
-                                        <CustomButton to='/forgetpassword ' variant='normal' >
+                                        <CustomButton to='/forgetpassword' variant='normal' >
                                             Forget Password?
                                         </CustomButton>
 
