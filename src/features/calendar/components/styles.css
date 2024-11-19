@@ -1,0 +1,15 @@
+.fc-toolbar-chunk{
+    display: flex ;
+}
+.fc .fc-button-primary{
+    background-color:#4985f8;
+    border:#4985f8;
+    color: white;
+}
+
+.fc .fc-button-primary:hover{
+    background-color: #2563eb
+}
+.fc .fc-button-primary:focus {
+    box-shadow: #4985f8 0px 0px 0px 0.2rem;
+}

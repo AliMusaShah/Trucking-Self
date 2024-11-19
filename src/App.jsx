@@ -19,9 +19,9 @@ import ListView from "./features/FacilitySearch/ListView.jsx";
 import SalesArea from "./features/savedfacility/SalesArea.jsx";
 import SavedFacility from "./features/savedfacility/SavedFacility.jsx";
 import SavedContact from "./features/SavedContact/SavedContact.jsx";
-import Weekly from "./features/calendar/Weekly.jsx";
-import Monthly from "./features/calendar/Monthly.jsx";
+// import Weekly from "./features/calendar/Weekly.jsx";
 import Pipeline from "./features/pipeline/Pipeline.jsx";
+import Calendar from "./features/calendar/Calendar.jsx";
 
 const router = createBrowserRouter([
   {
@@ -61,9 +61,15 @@ const router = createBrowserRouter([
       { path: '/savedfacility/sales-area', element: <SalesArea /> },
       { path: '/savedfacility/saved-facility', element: <SavedFacility /> },
       { path: '/saved-contacts', element: <SavedContact /> },
-      { path: '/calendar/weekly', element: <Weekly /> },
-      { path: '/calendar/monthly', element: <Monthly /> },
+      { path: '/calendar/weekly', element: <Calendar /> },
+      { path: '/calendar/monthly', element: <Calendar /> },
       { path: '/pipeline', element: <Pipeline /> },
+
+
+
+
+
+
       { path: '/settings/updateprofile', element: <UpdateProfile /> },
       { path: '/settings/updatepassword', element: <UpdatePassword /> },
 

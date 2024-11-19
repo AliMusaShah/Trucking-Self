@@ -94,3 +94,13 @@ export const MeetingDetailsSchema = Yup.object().shape({
         ["application/pdf", "image/jpeg", "image/png"].includes(value.type)
     ),
 });
+export const AddNewEventSchema = Yup.object().shape({
+  startDate: Yup.date().required("Start date is required"),
+  endDate: Yup.date().required("End date is required"),
+  company: Yup.string().required("Company selection is required"),
+  contact: Yup.string().required("Company selection is required"),
+  notes: Yup.string()
+    .min(6, "Note must be at least 6 characters")
+    .max(200, "Note Cant be More than 200 characters")
+    .required("Notes is required"),
+});

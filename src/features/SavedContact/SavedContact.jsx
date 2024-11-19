@@ -3,8 +3,17 @@ import ReusableTable from "../../components/ReusableTable";
 import SearchInput from "../../components/SearchInput";
 import SearchSelect from "../../components/SearchSelect";
 import { PiMagnifyingGlassPlusLight } from "react-icons/pi";
+import CompanyInformation from "../FacilitySearch/components/CompanyInformationForm";
+import { useState } from "react";
+import CustomModal from "../../components/CustomModal";
+import AddNewContactForm from "../savedfacility/components/AddNewContactForm";
+import MeetingDetailsForm from "../savedfacility/components/MeetingDetailsForm";
 
 const SavedContact = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    // const [selectedRow, setSelectedRow] = useState(null);
+    const handleModal = () => { setModalIsOpen(true) }
+    const closeModal = () => { setModalIsOpen(false) }
     const columns = [
         {
             // Radio button column
@@ -98,7 +107,19 @@ const SavedContact = () => {
 
                 </div>
             </div>
-            <ReusableTable columns={columns} data={data} />
+            <ReusableTable columns={columns} data={data} onClick={handleModal} />
+            <CustomModal
+                title='Facility Details'
+                isOpen={modalIsOpen}
+                onClose={closeModal}
+            // onSave={hanldeGetContact}
+            // saveLabel='Get Contatcs'
+            >
+                <AddNewContactForm />
+                <CompanyInformation />
+                <MeetingDetailsForm />
+
+            </CustomModal>
         </>
     )
 }

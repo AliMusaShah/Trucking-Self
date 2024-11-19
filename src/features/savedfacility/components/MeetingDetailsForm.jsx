@@ -78,16 +78,17 @@ const MeetingDetailsForm = () => {
                         {/* File Upload */}
                         <div className=" flex flex-col items-center space-y-1 text-center p-4 border-2 border-dashed border-defaultBlue rounded-md">
                             <label
-                                htmlFor="Choose file"
+                                htmlFor="file-upload"
                                 className="relative flex flex-col items-center cursor-pointer bg-white rounded-md font-medium text-lightBlue hover:text-blue-800 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500"
                             >
                                 <img src={Upload} alt="Upload" width={40} height={40} />
                                 <div className=" flex text-sm text-gray-600">
                                     <span>Choose file</span>
                                     <input
+                                        id="file-upload"
                                         name="file"
                                         type="file"
-                                        className=""
+                                        className="sr-only"
                                         onChange={(e) => setFieldValue("file", e.currentTarget.files[0])}
                                     />
                                     <span className="pl-1 text-defaultBlue">or drag and drop</span>
@@ -105,16 +106,8 @@ const MeetingDetailsForm = () => {
 
                         {/* Buttons */}
                         <div className="mt-6 flex justify-end space-x-4">
-                            <CustomButton
-                                type="button"
-                                variant="secondary"
-                                size="md"
-                                onClick={() => console.log("Cancel Clicked")}
-                            >
-                                Cancel
-                            </CustomButton>
                             <CustomButton type="submit" size="md">
-                                Save
+                                Re-schedule Call
                             </CustomButton>
                         </div>
                     </Form>

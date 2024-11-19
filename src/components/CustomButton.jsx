@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link, useNavigate } from 'react-router-dom';
 import backIcon from "../assets/backicon.png";
 
-const Button = ({
+const CustomButton = ({
     children,
     onClick,
     type = 'button',
@@ -60,7 +60,7 @@ const Button = ({
     }
 };
 
-Button.propTypes = {
+CustomButton.propTypes = {
     children: PropTypes.node.isRequired,
     onClick: PropTypes.func,
     type: PropTypes.oneOf(['button', 'submit', 'reset']),
@@ -71,4 +71,4 @@ Button.propTypes = {
     className: PropTypes.string,
 };
 
-export default Button;
+export default CustomButton;
