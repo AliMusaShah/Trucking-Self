@@ -20,8 +20,9 @@ import SalesArea from "./features/savedfacility/SalesArea.jsx";
 import SavedFacility from "./features/savedfacility/SavedFacility.jsx";
 import SavedContact from "./features/SavedContact/SavedContact.jsx";
 // import Weekly from "./features/calendar/Weekly.jsx";
-import Pipeline from "./features/pipeline/Pipeline.jsx";
+import Pipeline from "./features/pipeline/PipeLines.jsx";
 import Calendar from "./features/calendar/Calendar.jsx";
+import AdminUserManagement from "./features/UserManagement/AdminUserManagement.jsx";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,7 @@ const router = createBrowserRouter([
 
       { path: '/settings/updateprofile', element: <UpdateProfile /> },
       { path: '/settings/updatepassword', element: <UpdatePassword /> },
+      { path: '/admin/user-management', element: <AdminUserManagement /> },
 
     ]
   },

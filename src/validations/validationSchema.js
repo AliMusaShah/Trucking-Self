@@ -104,3 +104,21 @@ export const AddNewEventSchema = Yup.object().shape({
     .max(200, "Note Cant be More than 200 characters")
     .required("Notes is required"),
 });
+export const AddNewPipeLineSchema = Yup.object().shape({
+  stageName: Yup.string().required("Stage Name is required"),
+});
+export const AddNewUserSchema = Yup.object({
+  fullName: Yup.string()
+    .min(2, "alteast 2 character")
+    .required("Full name is required"),
+  role: Yup.string().required("First name is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: Yup.string()
+    .min(8, "Password must be at least 8 characters")
+    .required("Password is required"),
+  phone_number: Yup.string()
+    .matches(/^[0-9+ ]*$/, "Phone number is not valid")
+    .required("Phone is required"),
+});

@@ -5,6 +5,8 @@ import { CiSearch } from "react-icons/ci";
 import { PiMagnifyingGlassPlusLight } from "react-icons/pi";
 import Accordion from "./components/Accordion";
 import MapComponent from "./components/MapComponent";
+import MapWithClusterMarkers from "./components/MapWithClusterMarkers";
+// import MapWithClusterMarkers from './components/MapWithClusterMarkers'
 
 
 const MapView = () => {
@@ -20,9 +22,12 @@ const MapView = () => {
                     Save to List
                 </CutomButton>
             </div>
-            <div className="flex justify-between w-full">
+            <div className="flex justify-between w-full gap-4">
                 <MapComponent />
-                <Accordion />
+                {/* <MapWithClusterMarkers /> */}
+                <div className="flex-[1] bg-gray-100 p-4">
+                    <Accordion />
+                </div>
             </div>
         </>
     )

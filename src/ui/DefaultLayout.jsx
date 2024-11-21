@@ -14,11 +14,11 @@ const DefaultLayout = () => {
                 {!isHome && <Header />}
             </Navbar>
             <div className="p-4">
-                <div className="flex h-screen overflow-hidden my-2">
-                    <main className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden p-4">
-                        <Outlet />
-                    </main>
-                </div>
+                {/* <div className="flex h-screen overflow-hidden my-2"> */}
+                <main className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden p-4">
+                    <Outlet />
+                </main>
+                {/* </div> */}
             </div>
         </div>
 
