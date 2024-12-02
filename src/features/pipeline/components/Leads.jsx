@@ -123,21 +123,66 @@ const data = [
 const Leads = () => {
     const [columns, setColumns] = useState(data)
     // const [sourceColumnId, setSourceColumnId] = useState(null);
-    const [{ isOver }, dropRef] = useDrop({
+    const [{ isOver, }, drop] = useDrop({
         accept: 'Card',
-        drop: (item) => handleDrop(item),
+        drop: (item, monitor) => handleDrop(item, item.columnId, monitor),
+
         collect: (monitor) => ({
             isOver: monitor.isOver(),
+            canDrop: monitor.canDrop()
         }),
 
     })
+    console.log(useDrop)
+    const handleDrop = (item, targetColumnId, monitor) => {
+        // console.log(item);
+        console.log(monitor.getDropResult(), 'monitor')
 
-    const handleDrop = (item) => {
-        console.log(item)
-        setColumns((column) => {
+        // Update columns by moving the dropped card to the correct column
+        setColumns((prevColumns) => {
+            // Find the column where the card is currently located (the source column)
+            const sourceColumn = prevColumns.find((column) =>
+                column.leads.some((lead) => lead.cardId === item.cardId)
+            );
+            console.log(sourceColumn, 'sourceColumn')
+            // If the card is found, we need to remove it from the source column
+            if (sourceColumn) {
+                //     // Remove the item from the source column's leads
+                const updatedSourceColumn = {
+                    ...sourceColumn,
+                    leads: sourceColumn.leads.filter((lead) => lead.cardId !== item.cardId),
 
-        })
-    }
+                };
+                console.log(updatedSourceColumn, 'updatedSourceColumn')
+                //     // Find the target column where the card is dropped
+                const targetColumn = prevColumns.find(
+                    (column) => column.columnId === targetColumnId
+                );
+                console.log(targetColumn, 'targetColumn')
+
+                //     // Add the item to the target column
+                const updatedTargetColumn = {
+                    ...targetColumn,
+                    leads: [...targetColumn.leads, item],
+                };
+                console.log(updatedTargetColumn, 'updatedTargetColumn')
+
+
+                //     // Return the updated columns
+                return prevColumns.map((column) =>
+                    column.columnId === sourceColumn.columnId
+                        ? updatedSourceColumn
+                        : column.columnId === targetColumnId
+                            ? updatedTargetColumn
+                            : column
+                );
+            }
+
+            // If the card is not found, just return the previous columns (no changes)
+            return prevColumns;
+        });
+    };
+
 
     return (
         <div className="flex gap-3">
@@ -145,7 +190,7 @@ const Leads = () => {
                 columns.map((item, index) => (
                     <div key={index} className="flex flex-col items-start shadow-lg bg-gray-100">
                         <h1 className="text-xl font-semibold p-2 text-center mb-4 text-white bg-defaultBlue w-full">{item?.heading}</h1>
-                        <div className="space-y-4 p-3" ref={dropRef} style={{ backgroundColor: isOver ? 'lightgreen' : 'white' }}>
+                        <div className="space-y-4 p-3" ref={drop} style={{ backgroundColor: isOver ? 'lightgreen' : 'white' }}>
                             {item?.leads.map((lead, index) => (
                                 <Cards lead={lead} key={index} columnId={item.columnId} />
                             ))}

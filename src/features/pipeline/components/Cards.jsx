@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import { useDrag } from 'react-dnd'
 
 const Cards = ({ lead, columnId }) => {
-    // console.log(lead)
-
-    const [{ isDragging }, dragRef] = useDrag({
+    const [{ isDragging }, drag] = useDrag({
         type: 'Card',
-        item: () => ({ lead, }),
+        item: () => ({ ...lead, columnId }),
         collect: (monitor) => {
             return {
                 isDragging: monitor.isDragging(),
             };
-        }
+        },
+
+
     })
     // const handleDrag = (lead) => {
     //     console.log(lead)
     // }
     return (
-        <div className=" p-1 cursor-grab bg-white rounded shadow" ref={dragRef} onClick={() => console.log(columnId)} style={{ opacity: isDragging ? 0.5 : 1 }}>
+        <div className=" p-1 cursor-grab bg-white rounded shadow" ref={drag} onClick={() => console.log(columnId)} style={{ opacity: isDragging ? 0.5 : 1 }}>
             {/* <div className="text-sm text-gray-600 w-full"> */}
             <div className="flex justify-between p-2  font-normal text-defaultBlue">
                 <span className="font-semibold">{lead.company}</span>
