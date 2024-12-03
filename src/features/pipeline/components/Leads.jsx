@@ -125,7 +125,7 @@ const Leads = () => {
     // const [sourceColumnId, setSourceColumnId] = useState(null);
     const [{ isOver, }, drop] = useDrop({
         accept: 'Card',
-        drop: (item, monitor) => handleDrop(item, item.columnId, monitor),
+        drop: (item,) => handleDrop(item, 2),
 
         collect: (monitor) => ({
             isOver: monitor.isOver(),
@@ -134,9 +134,9 @@ const Leads = () => {
 
     })
     console.log(useDrop)
-    const handleDrop = (item, targetColumnId, monitor) => {
+    const handleDrop = (item, targetColumnId,) => {
         // console.log(item);
-        console.log(monitor.getDropResult(), 'monitor')
+        // console.log(monitor.getDropResult(), 'monitor')
 
         // Update columns by moving the dropped card to the correct column
         setColumns((prevColumns) => {
