@@ -82,7 +82,7 @@ const router = createBrowserRouter([
   },
 ])
 
-console.log('sample config')
+// console.log('sample config')
 function App() {
 
   return (
