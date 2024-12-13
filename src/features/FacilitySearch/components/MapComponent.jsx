@@ -2,19 +2,13 @@ import Map, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useState } from 'react'
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useGetAllFacilityQuery } from "../../../api/apiSlice";
 
 
-
-
-
-const locations = [
-    { id: 1, longitude: -74.006, latitude: 40.7128, title: "New York City" },
-    { id: 2, longitude: -118.2437, latitude: 34.0522, title: "Los Angeles" },
-    { id: 3, longitude: -87.6298, latitude: 41.8781, title: "Chicago" },
-];
 const MapComponent = () => {
     const [selectedLocation, setSelectedLocation] = useState(null);
     const MAPBOX_TOKEN = "pk.eyJ1Ijoiam9zaGNhcmxvZyIsImEiOiJjbTNvbGttNXUwNHR1MmxwcjFvNzNpb3BhIn0.HVElWTKoAwubl7IRU6y6Fw";
+    const { data, } = useGetAllFacilityQuery(1);
 
     const handleMarkerClick = (loc) => {
         setSelectedLocation(loc); // Set the selected location
@@ -33,9 +27,9 @@ const MapComponent = () => {
                 mapboxAccessToken={MAPBOX_TOKEN}
             >
                 {/* Marker */}
-                {locations.map((loc) => (
+                {data?.data?.data.map((loc, index) => (
                     <Marker
-                        key={loc.id}
+                        key={index}
                         longitude={loc.longitude}
                         latitude={loc.latitude}
                         anchor="bottom"

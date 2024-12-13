@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import CustomButton from '../components/CustomButton';
 import Cross from '../assets/cross.png'
 
-const CustomModal = ({ isOpen, onSave, title, cancelLabel, children, onClose, saveLabel }) => {
+const CustomModal = ({ isOpen, onSave, title, cancelLabel, children, onClose, saveLabel, saveList, ListLabel }) => {
 
     if (!isOpen) return null;
 
@@ -34,6 +34,10 @@ const CustomModal = ({ isOpen, onSave, title, cancelLabel, children, onClose, sa
                             <CustomButton size='md' variant='secondary' onClick={onClose}>
                                 {cancelLabel}
                             </CustomButton>}
+                        {saveList &&
+                            <CustomButton type='button' onClick={onSave} size='md' variant='green'>
+                                {ListLabel}
+                            </CustomButton>}
                         {onSave &&
                             <CustomButton type='submit' onClick={onSave} size='md' >
                                 {saveLabel}
@@ -48,8 +52,10 @@ const CustomModal = ({ isOpen, onSave, title, cancelLabel, children, onClose, sa
 CustomModal.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     onSave: PropTypes.func,
+    saveList: PropTypes.bool,
     onClose: PropTypes.func.isRequired,
     saveLabel: PropTypes.string,
+    ListLabel: PropTypes.string,
     cancelLabel: PropTypes.string,
     title: PropTypes.string,
     children: PropTypes.node.isRequired,

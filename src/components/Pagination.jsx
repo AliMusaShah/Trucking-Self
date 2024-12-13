@@ -44,7 +44,7 @@ const Pagination = ({ totalCount, totalPages, currentPage, onPageChange }) => {
                     <li key={i}>
                         <button
                             onClick={() => setPage(i)}
-                            className={`px-3 py-2 leading-tight ${i === currentPageState ? 'text-white bg-defaultGreen  border-lightBlue rounded-[8px]' : 'text-gray-500 bg-white '} `}
+                            className={`px-3 py-2 leading-tight ${i === currentPageState ? 'text-white bg-defaultBlue  border-lightBlue rounded-[8px]' : 'text-gray-500 bg-white '} `}
                         >
                             {i}
                         </button>
@@ -70,7 +70,7 @@ const Pagination = ({ totalCount, totalPages, currentPage, onPageChange }) => {
                     <span className="font-medium">
                         {Math.min(indexOfLastPost, totalCount)}
                     </span>{" "}
-                    of <span className="font-medium">{totalCount}</span> Received Badges
+                    of <span className="font-medium">{totalCount}</span> Locations
                 </p>
 
                 <div className="flex justify-center mt-4">

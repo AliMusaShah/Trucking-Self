@@ -7,15 +7,15 @@ const SavedFacilitiesModal = () => {
     const columns = [
         {
             // Radio button column
-            render: (row) => (
-                <input
-                    className="relative  h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-defaultBlue outline-none checked:bg-defaultBlue  "
-                    type="checkbox"
-                    value=""
-                    id="checkboxDefault"
-                    onChange={() => console.log(row)}
-                />
-            ),
+            // render: (row) => (
+            //     <input
+            //         className="relative  h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-defaultBlue outline-none checked:bg-defaultBlue  "
+            //         type="checkbox"
+            //         value=""
+            //         id="checkboxDefault"
+            //         onChange={() => console.log(row)}
+            //     />
+            // ),
         },
         { header: 'Facility Name', accessor: 'Facility Name' },
         { header: 'Facility Address', accessor: 'Facility Address' },

@@ -5,6 +5,8 @@ import Upload from "../../../assets/upload-img.png";
 
 const MeetingDetailsForm = () => {
     const initialValues = {
+        name: '',
+        title: '',
         startDate: "",
         endDate: "",
         linkedin: "",
@@ -29,6 +31,32 @@ const MeetingDetailsForm = () => {
                         <h1 className="text-xl font-bold text-gray-800">Meeting Details</h1>
                         <div className="grid grid-cols-2 gap-4">
                             {/* Start Date */}
+                            <div className="relative">
+                                <label className="text-gray-700">Contact person</label>
+                                <Field
+                                    name="name"
+                                    type="text"
+                                    className="w-full px-4 py-2 rounded-md text-gray-700 border"
+                                />
+                                <ErrorMessage
+                                    name="name"
+                                    component="div"
+                                    className="text-red-500 text-sm"
+                                />
+                            </div>
+                            <div className="relative">
+                                <label className="text-gray-700">title</label>
+                                <Field
+                                    name="title"
+                                    type="text"
+                                    className="w-full px-4 py-2 rounded-md text-gray-700 border"
+                                />
+                                <ErrorMessage
+                                    name="name"
+                                    component="div"
+                                    className="text-red-500 text-sm"
+                                />
+                            </div>
                             <div className="relative">
                                 <label className="text-gray-700">Start Date</label>
                                 <Field
@@ -59,17 +87,18 @@ const MeetingDetailsForm = () => {
                             </div>
                         </div>
 
-                        {/* LinkedIn */}
+                        {/* notes */}
                         <div className="relative">
-                            <label className="text-gray-700">LinkedIn Profile</label>
+                            <label className="text-gray-700">Notes</label>
                             <Field
-                                name="linkedin"
+                                as='textarea'
+                                name="notes"
                                 type="text"
                                 className="w-full px-4 py-2 rounded-md  border"
-                                placeholder="Enter LinkedIn URL"
+                                placeholder="Enter Notes"
                             />
                             <ErrorMessage
-                                name="linkedin"
+                                name="notes"
                                 component="div"
                                 className="text-red-500 text-sm"
                             />

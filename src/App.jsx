@@ -23,7 +23,6 @@ import SavedContact from "./features/SavedContact/SavedContact.jsx";
 import Pipeline from "./features/pipeline/PipeLines.jsx";
 import Calendar from "./features/calendar/Calendar.jsx";
 import AdminUserManagement from "./features/UserManagement/AdminUserManagement.jsx";
-import KanbanBoard from "./features/kanban/KanbanBoard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -65,9 +64,7 @@ const router = createBrowserRouter([
       { path: '/saved-contacts', element: <SavedContact /> },
       { path: '/calendar/weekly', element: <Calendar /> },
       { path: '/calendar/monthly', element: <Calendar /> },
-      // { path: '/pipeline', element: <Pipeline /> },
-      { path: '/pipeline', element: <KanbanBoard /> },
-
+      { path: '/pipeline', element: <Pipeline /> },
 
 
 
@@ -82,7 +79,7 @@ const router = createBrowserRouter([
   },
 ])
 
-// console.log('sample config')
+
 function App() {
 
   return (

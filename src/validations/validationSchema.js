@@ -79,11 +79,13 @@ export const AddNewContactSchema = Yup.object().shape({
   linkedin: Yup.string().required("Phone_Number is required"),
 });
 export const MeetingDetailsSchema = Yup.object().shape({
+  name: Yup.string().required("Name is required"),
+  title: Yup.string().required("Title is required"),
   startDate: Yup.date().required("Start date is required"),
   endDate: Yup.date().required("End date is required"),
-  linkedin: Yup.string()
+  notes: Yup.string()
     // .url("Must be a valid URL")
-    .required("LinkedIn profile is required"),
+    .required("notes is required"),
   file: Yup.mixed()
     .required("File is required")
     .test(

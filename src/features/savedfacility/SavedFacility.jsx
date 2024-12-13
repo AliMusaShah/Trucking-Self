@@ -12,24 +12,23 @@ const SavedFacility = () => {
     const closeModal = () => { setModalIsOpen(false) }
 
     const columns = [
-        {
-            // Radio button column
-            render: (row) => (
-                <input
-                    className="relative  h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-defaultBlue outline-none checked:bg-defaultBlue  "
-                    type="checkbox"
-                    value=""
-                    id="checkboxDefault"
-                    onChange={() => console.log(row)}
-                />
-            ),
-        },
+        // {
+        // Radio button column
+        // render: (row) => (
+        //     <input
+        //         className="relative  h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-defaultBlue outline-none checked:bg-defaultBlue  "
+        //         type="checkbox"
+        //         value=""
+        //         id="checkboxDefault"
+        //         onChange={() => console.log(row)}
+        //     />
+        // ),
+        // },
         { header: 'Facility Name', accessor: 'Facility Name' },
         { header: 'Facility Address', accessor: 'Facility Address' },
-        { header: 'Truck Activity', accessor: 'Truck Activity' },
-        { header: 'Company URL', accessor: 'Company URL' },
-        { header: 'Truck Equipment', accessor: 'Truck Equipment' },
-        { header: 'Facility Commodities', accessor: 'Facility Commodities' },
+        { header: 'Company URL', accessor: 'Truck Activity' },
+        { header: 'Google Maps URL', accessor: 'Company URL' },
+        { header: 'Industry', accessor: 'Truck Equipment' },
         {
             header: 'Sales Area', render: (row) => (
                 <div className="flex  items-center">
@@ -85,8 +84,7 @@ const SavedFacility = () => {
                 title='Facility Details'
                 isOpen={modalIsOpen}
                 onClose={closeModal}
-            // onSave={hanldeGetContact}
-            // saveLabel='Get Contatcs'
+
             >
                 <CompanyInformation />
                 <AddNewContactForm />

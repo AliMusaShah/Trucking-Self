@@ -10,13 +10,22 @@ import AddNewSaleForm from "./components/AddNewSaleForm"
 import CompanyInformation from "./components/CompanyInformationForm"
 import ContactListModal from "./components/ContactListModal"
 import Tick from '../../assets/tick-success.png'
+import { useGetAllFacilityQuery } from "../../api/apiSlice"
+import Pagination from "../../components/Pagination"
 const ListView = () => {
     const [addNewSalesModal, setAddNewSalesModal] = useState(false);
     const [companyDetailModal, setCompanyDetailModal] = useState(false);
     const [ContactList, setContactList] = useState(false);
     const [successModal, setSuccessModal] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const { data, } = useGetAllFacilityQuery(10, currentPage);
 
+    console.log(data)
 
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+        console.log(currentPage)
+    };
     const handleAddNewSalesModal = () => setAddNewSalesModal(true);
     const closeSuccessModal = () => setSuccessModal(false);
 
@@ -42,13 +51,7 @@ const ListView = () => {
     }
     const columns = [
         {
-            // Radio button column
             render: (row) => (
-                // <input
-                //     type="checkbox"
-                // // checked={selectedRow === row.id}
-                // // onChange={() => setSelectedRow(row.id)}
-                // />
                 <input
                     className="relative  h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-defaultBlue outline-none checked:bg-defaultBlue  "
                     type="checkbox"
@@ -58,20 +61,11 @@ const ListView = () => {
                 />
             ),
         },
-        { header: 'Facility Name', accessor: 'Facility Name' },
-        { header: 'Facility Address', accessor: 'Facility Address' },
-        { header: 'Truck Activity', accessor: 'Truck Activity' },
-        { header: 'Company URL', accessor: 'Company URL' },
-        { header: 'Truck Equipment', accessor: 'Truck Equipment' },
-        { header: 'Facility Commodities', accessor: 'Facility Commodities' },
+        { header: 'Company Name', accessor: 'name' },
+        { header: 'Company Industry', accessor: 'streetAddress' },
+        { header: 'Short Description', accessor: 'Truck Activity' },
+        { header: 'Company URL', accessor: 'WebsiteURL' },
         { header: 'Distance', accessor: 'Distance' },
-    ];
-    const data = [
-        { id: 1, 'Facility Name': 'Facility A', 'Facility Address': '123 Main St', 'Truck Activity': 'Active', 'Company URL': 'http://a.com', 'Truck Equipment': 'Truck 1', 'Facility Commodities': 'Oil', 'Distance': '5 miles' },
-        { id: 2, 'Facility Name': 'Facility B', 'Facility Address': '456 Oak St', 'Truck Activity': 'Inactive', 'Company URL': 'http://b.com', 'Truck Equipment': 'Truck 2', 'Facility Commodities': 'Water', 'Distance': '10 miles' },
-        { id: 3, 'Facility Name': 'Facility C', 'Facility Address': '123 Main St', 'Truck Activity': 'Active', 'Company URL': 'http://a.com', 'Truck Equipment': 'Truck 1', 'Facility Commodities': 'Oil', 'Distance': '5 miles' },
-        { id: 4, 'Facility Name': 'Facility D', 'Facility Address': '456 Oak St', 'Truck Activity': 'Inactive', 'Company URL': 'http://b.com', 'Truck Equipment': 'Truck 2', 'Facility Commodities': 'Water', 'Distance': '10 miles' },
-
     ];
     return (
         <>
@@ -86,10 +80,10 @@ const ListView = () => {
                 </CutomButton>
             </div>
             <div className="">
-                <ReusableTable columns={columns} data={data} />
+                <ReusableTable columns={columns} data={data?.data?.data} />
+                <Pagination totalCount={data?.data?.totalRecord} totalPages={data?.data?.totalPages} currentPage={data?.data?.currentPage} onPageChange={handlePageChange} />
             </div>
 
-            { }
 
             <CustomModal
                 title='Add New Sales Areas'
@@ -104,6 +98,8 @@ const ListView = () => {
                 isOpen={companyDetailModal}
                 onClose={CloseModal}
                 onSave={hanldeGetContact}
+                saveList={hanldeGetContact}
+                ListLabel='Save List'
                 saveLabel='Get Contatcs'
             >
                 <CompanyInformation />
@@ -126,6 +122,7 @@ const ListView = () => {
 
                 <p className="text-center">Your contact has been saved successfully in your account.</p>
             </CustomModal>
+
         </>
     )
 }

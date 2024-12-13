@@ -9,7 +9,7 @@ const CompanyInformation = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Row 1 */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Facility Name</label>
+                    <label className="block text-sm font-medium text-gray-700">Company name</label>
                     <input
                         type="text"
                         defaultValue="OBERFIELDS"
@@ -18,7 +18,7 @@ const CompanyInformation = () => {
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Company URL</label>
+                    <label className="block text-sm font-medium text-gray-700">Company Industry</label>
                     <input
                         type="text"
                         defaultValue="www.oberfields.com"
@@ -29,7 +29,7 @@ const CompanyInformation = () => {
 
                 {/* Row 2 */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Facility Number</label>
+                    <label className="block text-sm font-medium text-gray-700">Short Description</label>
                     <input
                         type="text"
                         defaultValue="(614) 252-0955"
@@ -38,7 +38,7 @@ const CompanyInformation = () => {
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Company Email</label>
+                    <label className="block text-sm font-medium text-gray-700">Company Url</label>
                     <input
                         type="text"
                         defaultValue="info@silicon-nexus.com"
@@ -49,7 +49,7 @@ const CompanyInformation = () => {
 
                 {/* Row 3 */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Truck Activity</label>
+                    <label className="block text-sm font-medium text-gray-700">Facility Phone</label>
                     <input
                         type="text"
                         defaultValue="Medium"
@@ -58,7 +58,7 @@ const CompanyInformation = () => {
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Truck Equipment</label>
+                    <label className="block text-sm font-medium text-gray-700">Annual Revenue Printed</label>
                     <input
                         type="text"
                         defaultValue="Dry Van, Refrigerated"
@@ -69,10 +69,10 @@ const CompanyInformation = () => {
 
                 {/* Row 4 */}
                 <div className="sm:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700">Facility Address</label>
+                    <label className="block text-sm font-medium text-gray-700">Company Linkedin </label>
                     <input
                         type="text"
-                        defaultValue="4033 Alum Creek Dr, Obetz, OH 43207"
+                        defaultValue="https://www.linkedin.com/in/darrick-collins-b432a347/"
                         className="mt-1 p-2 bg-gray-100 rounded-md w-full"
                         readOnly
                     />
@@ -80,20 +80,10 @@ const CompanyInformation = () => {
 
                 {/* Row 5 */}
                 <div className="sm:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700">Facility Commodities</label>
+                    <label className="block text-sm font-medium text-gray-700">Facility Address</label>
                     <input
                         type="text"
                         defaultValue="Pavers, Retaining Walls, Coping Stones"
-                        className="mt-1 p-2 bg-gray-100 rounded-md w-full"
-                        readOnly
-                    />
-                </div>
-
-                {/* Row 6 */}
-                <div className="sm:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700">Company Description</label>
-                    <textarea
-                        defaultValue="Oberfields is a manufacturer of hardscape and concrete masonry products in the Midwest"
                         className="mt-1 p-2 bg-gray-100 rounded-md w-full"
                         readOnly
                     />

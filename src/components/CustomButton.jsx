@@ -26,6 +26,7 @@ const CustomButton = ({
         primary: 'bg-defaultBlue text-white hover:bg-blue-600',
         secondary: 'bg-gray-500 text-white hover:bg-gray-600',
         danger: 'bg-red-500 text-white hover:bg-red-600',
+        green: 'bg-[#27AE60] text-white hover:bg-gray'
     };
 
     const buttonClasses = `${baseStyles} ${sizeClasses[size]} ${variantClasses[variant]} ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-lg'

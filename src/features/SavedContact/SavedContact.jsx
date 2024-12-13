@@ -15,41 +15,41 @@ const SavedContact = () => {
     const handleModal = () => { setModalIsOpen(true) }
     const closeModal = () => { setModalIsOpen(false) }
     const columns = [
-        {
-            // Radio button column
-            render: (row) => (
-                <input
-                    className="relative  h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-defaultBlue outline-none checked:bg-defaultBlue  "
-                    type="checkbox"
-                    value=""
-                    id="checkboxDefault"
-                    onChange={() => console.log(row)}
-                />
-            ),
-        },
-        { header: 'Facility Name', accessor: 'Facility Name' },
-        { header: 'Facility Address', accessor: 'Facility Address' },
-        { header: 'Truck Activity', accessor: 'Truck Activity' },
-        { header: 'Company URL', accessor: 'Company URL' },
-        { header: 'Truck Equipment', accessor: 'Truck Equipment' },
-        { header: 'Facility Commodities', accessor: 'Facility Commodities' },
-        {
-            header: 'Sales Area', render: (row) => (
-                <div className="flex  items-center">
-                    <label className="inline-flex items-center cursor-pointer">
-                        <select
-                            className=" border text-gray-700 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            onChange={(e) => console.log('Selected option for row:', row, e.target.value)}
-                        >
-                            <option value="">Select an option</option>
-                            <option value="Area 1">Area 1</option>
-                            <option value="Area 2">Area 2</option>
-                            <option value="Area 3">Area 3</option>
-                        </select>
-                    </label>
-                </div>
-            ),
-        },
+        // {
+        //     // Radio button column
+        //     render: (row) => (
+        //         <input
+        //             className="relative  h-[1.125rem] w-[1.125rem]  rounded-[0.25rem] border-[0.125rem] border-solid border-defaultBlue outline-none checked:bg-defaultBlue  "
+        //             type="checkbox"
+        //             value=""
+        //             id="checkboxDefault"
+        //             onChange={() => console.log(row)}
+        //         />
+        //     ),
+        // },
+        { header: 'Name', accessor: 'Facility Name' },
+        { header: 'Company', accessor: 'Facility Address' },
+        { header: 'Title', accessor: 'Truck Activity' },
+        { header: 'Email', accessor: 'Company URL' },
+        { header: 'Phone Number', accessor: 'Truck Equipment' },
+        { header: 'Sales Area', accessor: 'Facility Commodities' },
+        // {
+        //     header: 'Sales Area', render: (row) => (
+        //         <div className="flex  items-center">
+        //             <label className="inline-flex items-center cursor-pointer">
+        //                 <select
+        //                     className=" border text-gray-700 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        //                     onChange={(e) => console.log('Selected option for row:', row, e.target.value)}
+        //                 >
+        //                     <option value="">Select an option</option>
+        //                     <option value="Area 1">Area 1</option>
+        //                     <option value="Area 2">Area 2</option>
+        //                     <option value="Area 3">Area 3</option>
+        //                 </select>
+        //             </label>
+        //         </div>
+        //     ),
+        // },
         {
             header: 'Pipeline Stage', render: (row) => (
                 <div className="flex  items-center">
@@ -100,6 +100,7 @@ const SavedContact = () => {
     ];
     return (
         <>
+            <p className="text-xl font-bold">Individual Contacts Listing</p>
             <div className="flex justify-between items-center">
                 <div className="flex w-1/2">
                     <SearchInput Icon={CiSearch} iconColor='defaultBlue' placeholder='Search' className="pl-10 w-full p-2 bg-white text-sm text-defaultBlue placeholder-defaultBlue	 border border-defaultBlue rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />

@@ -5,7 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { PiMagnifyingGlassPlusLight } from "react-icons/pi";
 import Accordion from "./components/Accordion";
 import MapComponent from "./components/MapComponent";
-import MapWithClusterMarkers from "./components/MapWithClusterMarkers";
+// import MapWithClusterMarkers from "./components/MapWithClusterMarkers";
 // import MapWithClusterMarkers from './components/MapWithClusterMarkers'
 
 

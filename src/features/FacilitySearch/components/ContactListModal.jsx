@@ -7,18 +7,22 @@ const contacts = [
         name: "Josh",
         title: "Branch Manager",
         status: "Saved Contact",
+        company: 'branch-manager'
     },
     {
         id: 2,
         name: "Emily",
         title: "Project Coordinator",
         status: "Saved Contact",
+        company: 'branch-manager'
     },
     {
         id: 3,
         name: "Michael",
         title: "Sales Lead",
         status: "Saved Contact",
+        company: 'branch-manager'
+
     },
 ];
 
@@ -28,11 +32,15 @@ const ContactListModal = ({ saveContact }) => {
             {contacts.map((contact, index) => (
                 <div
                     key={index}
-                    className="flex items-center justify-between p-4 bg-gray-100 rounded-lg shadow-sm mb-4"
+                    className="flex items-center justify-between flex-wrap p-4 bg-gray-100 rounded-lg shadow-sm mb-4"
                 >
                     <div>
                         <p className="text-sm text-gray-500">Contact Name</p>
                         <p className="font-medium text-gray-900">{contact.name}</p>
+                    </div>
+                    <div>
+                        <p className="text-sm text-gray-500">company</p>
+                        <p className="font-medium text-gray-900">{contact.company}</p>
                     </div>
                     <div className="">
                         <p className="text-sm text-gray-500">Title</p>

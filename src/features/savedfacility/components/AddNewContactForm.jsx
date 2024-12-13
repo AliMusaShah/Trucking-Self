@@ -51,7 +51,7 @@ const AddNewContactForm = () => {
 
                             {/* Notes */}
                             <div className="relative">
-                                <label className="text-gray-700">Title</label>
+                                <label className="text-gray-700">Company</label>
                                 <Field
                                     name="title"
                                     className="w-full px-4 py-2 rounded-md text-gray-700 border"
@@ -64,11 +64,11 @@ const AddNewContactForm = () => {
                                 />
                             </div>
                             <div className="relative">
-                                <label className="text-gray-700">Email #1</label>
+                                <label className="text-gray-700">Title</label>
                                 <Field
                                     name="email_1"
                                     className="w-full px-4 py-2 rounded-md text-gray-700 border"
-                                    placeholder="Enter Email #1"
+                                    placeholder="Title"
                                 />
                                 <ErrorMessage
                                     name="email_1"
@@ -77,11 +77,11 @@ const AddNewContactForm = () => {
                                 />
                             </div>
                             <div className="relative">
-                                <label className="text-gray-700">Phone #1</label>
+                                <label className="text-gray-700">Linkedin Profile</label>
                                 <Field
                                     name="phone_1"
                                     className="w-full px-4 py-2 rounded-md text-gray-700 border"
-                                    placeholder="Enter Phone #1"
+                                    placeholder="Enter Linkedin"
                                 />
                                 <ErrorMessage
                                     name="phone_1"
@@ -90,7 +90,7 @@ const AddNewContactForm = () => {
                                 />
                             </div>
                             <div className="relative">
-                                <label className="text-gray-700">Email #2</label>
+                                <label className="text-gray-700">Email</label>
                                 <Field
                                     name="email_2"
                                     className="w-full px-4 py-2 rounded-md text-gray-700 border"
@@ -103,7 +103,7 @@ const AddNewContactForm = () => {
                                 />
                             </div>
                             <div className="relative">
-                                <label className="text-gray-700">Phone #2</label>
+                                <label className="text-gray-700">Phone</label>
                                 <Field
                                     name="phone_2"
                                     className="w-full px-4 py-2 rounded-md text-gray-700 border"
@@ -118,7 +118,7 @@ const AddNewContactForm = () => {
 
                         </div>
                         <div className="relative">
-                            <label className="text-gray-700">linkedin</label>
+                            <label className="text-gray-700">Person&apos;s Location</label>
                             <Field
                                 name="linkedin"
                                 className="w-full px-4 py-2 rounded-md text-gray-700 border"
